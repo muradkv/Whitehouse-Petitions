@@ -10,12 +10,19 @@ import UIKit
 
 class TableViewController: UITableViewController {
 
-    var petitions = [String]()
+    var petitions = [Petition]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        petitions.append("Check")
+        let urlString = "https://www.hackingwithswift.com/samples/petitions-1.json"
+        
+        if let url = URL(string: urlString) {
+            if let data = try? Data(contentsOf: url) {
+                parse(json: data)
+            }
+        }
+        
     }
 
     // MARK: - Table view data source
@@ -39,4 +46,14 @@ class TableViewController: UITableViewController {
         return cell
     }
 
+    // MARK: - Parse data from JSON to Petitions array
+    
+    func parse(json: Data) {
+        let decoder = JSONDecoder()
+        
+        if let jsonDecoder = try? decoder.decode(Petitions.self, from: json) {
+            petitions = jsonDecoder.results
+            tableView.reloadData()
+        }
+    }
 }
