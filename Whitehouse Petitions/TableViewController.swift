@@ -40,8 +40,8 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = "Title text"
-        cell.detailTextLabel?.text = "Detail text"
+        cell.textLabel?.text = petitions[indexPath.row].title
+        cell.detailTextLabel?.text = petitions[indexPath.row].body
         
         return cell
     }
