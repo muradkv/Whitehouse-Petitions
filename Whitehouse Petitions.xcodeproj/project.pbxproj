@@ -14,6 +14,7 @@
 		FAD96007228219FE00165C70 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD96006228219FE00165C70 /* TableViewController.swift */; };
 		FAD960092282202100165C70 /* Petition.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD960082282202100165C70 /* Petition.swift */; };
 		FAD9600B2282211C00165C70 /* Petitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD9600A2282211C00165C70 /* Petitions.swift */; };
+		FAD9600D22836DD700165C70 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD9600C22836DD700165C70 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		FAD96006228219FE00165C70 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		FAD960082282202100165C70 /* Petition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Petition.swift; sourceTree = "<group>"; };
 		FAD9600A2282211C00165C70 /* Petitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Petitions.swift; sourceTree = "<group>"; };
+		FAD9600C22836DD700165C70 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				FAD9600022820DD300165C70 /* Info.plist */,
 				FAD960082282202100165C70 /* Petition.swift */,
 				FAD9600A2282211C00165C70 /* Petitions.swift */,
+				FAD9600C22836DD700165C70 /* DetailViewController.swift */,
 			);
 			path = "Whitehouse Petitions";
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 			files = (
 				FAD95FF522820DD200165C70 /* AppDelegate.swift in Sources */,
 				FAD9600B2282211C00165C70 /* Petitions.swift in Sources */,
+				FAD9600D22836DD700165C70 /* DetailViewController.swift in Sources */,
 				FAD96007228219FE00165C70 /* TableViewController.swift in Sources */,
 				FAD960092282202100165C70 /* Petition.swift in Sources */,
 			);
