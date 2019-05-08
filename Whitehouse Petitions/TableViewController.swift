@@ -25,9 +25,12 @@ class TableViewController: UITableViewController {
         if let url = URL(string: urlString) {
             if let data = try? Data(contentsOf: url) {
                 parse(json: data)
+                return
             }
+            
         }
         
+        showError()        
     }
 
     // MARK: - Table view data source
@@ -66,5 +69,11 @@ class TableViewController: UITableViewController {
             petitions = jsonDecoder.results
             tableView.reloadData()
         }
+    }
+    
+    func showError() {
+        let ac = UIAlertController(title: "Loading error", message: "There was a problem loading the feed; please check your connection and try again.", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
     }
 }
