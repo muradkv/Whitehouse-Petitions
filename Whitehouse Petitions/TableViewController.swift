@@ -31,9 +31,10 @@ class TableViewController: UITableViewController {
                     return
                 }
             }
+            
+            self?.showError()
         }
         
-        showError()
     }
 
     // MARK: - Table view data source
@@ -70,14 +71,19 @@ class TableViewController: UITableViewController {
         
         if let jsonDecoder = try? decoder.decode(Petitions.self, from: json) {
             petitions = jsonDecoder.results
-            tableView.reloadData()
+            
+            DispatchQueue.main.async { [weak self] in
+                self?.tableView.reloadData()
+            }
         }
     }
     
     func showError() {
-        let ac = UIAlertController(title: "Loading error", message: "There was a problem loading the feed; please check your connection and try again.", preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "OK", style: .default))
-        present(ac, animated: true)
+        DispatchQueue.main.async { [weak self] in
+            let ac = UIAlertController(title: "Loading error", message: "There was a problem loading the feed; please check your connection and try again.", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            self?.present(ac, animated: true)
+        }
     }
     
     @objc func showCredits() {
